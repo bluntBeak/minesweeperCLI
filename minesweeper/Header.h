@@ -1,10 +1,11 @@
 #pragma once
+
 #define SIZE 10
 #define BLANK '*'
 #define FLAG  'F'
 #define MINE -1
-
-
+#define SELECTION 'n'
+#define NOTSELECTION 'u'
 
 enum ARROWKEY
 {
@@ -12,7 +13,7 @@ enum ARROWKEY
 	ARROW_UP = 256 + 72,
 	ARROW_DOWN = 256 + 80,
 	ARROW_LEFT = 256 + 75,
-	ARROW_RIGHT = 256 + 77
+	ARROW_RIGHT = 256 + 77,
 };
 enum STATE
 {
@@ -29,6 +30,16 @@ enum NUMBEROFMINES
 	EASY= 5
 
 };
+
+enum ACTION
+{
+	INIT = 0,
+	SELECT = 100,
+	FLAGMINE = 200,
+	RESET = 300,
+	EXITGAME = 400,
+	ARROW=500
+};
 //display functions
 void SelectColour(int k);
 void WelcomeScreen();
@@ -36,7 +47,7 @@ int SelectLevel();
 void Win();
 void Lose();
 void CursorPosition(int, int);
-void RevealSlot(char chInterfaceMatrix[][SIZE], int i, int j);
+void RevealSlot(char chInterfaceMatrix[][SIZE][2], int i, int j);
 int PlayAgainScreen();
 void EnterToStart(void);
 

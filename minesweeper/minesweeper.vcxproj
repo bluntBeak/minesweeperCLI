@@ -146,8 +146,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameProcess.cpp" />
-    <ClCompile Include="Display.cpp" />
+    <ClCompile Include="GameProcess.c" />
+    <ClCompile Include="Display.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
